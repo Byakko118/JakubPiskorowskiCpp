@@ -3,11 +3,11 @@ using namespace std;
 
 int main()
 {
-    const int wielkosc = 10;
-    int liczby[wielkosc];
+    const int WIELKOSC = 10;
+    int liczby[WIELKOSC];
     int suma = 0;
 
-    for (int i = 0; i < wielkosc; i++) {
+    for (int i = 0; i < WIELKOSC; i++) {
         cout << "Podaj liczbe nr " << i + 1 << ": ";
         cin >> liczby[i];
         if (cin.fail()) {
@@ -17,7 +17,7 @@ int main()
     }
 
     cout << "Liczby parzyste: ";
-    for (int i = 0; i < wielkosc; i++) {
+    for (int i = 0; i < WIELKOSC; i++) {
         if (liczby[i] % 2 == 0) {
             cout << liczby[i] << ", ";
             suma += liczby[i];

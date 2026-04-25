@@ -3,10 +3,10 @@ using namespace std;
 
 int main()
 {
-    static int wielkosc = 5;
+    static int WIELKOSC = 5;
     int liczby[5];
-    cout << "Wprowadz " << wielkosc << " liczb calkowitych:" << endl;
-    for (int i = 0; i < wielkosc; i++) {
+    cout << "Wprowadz " << WIELKOSC << " liczb calkowitych:" << endl;
+    for (int i = 0; i < WIELKOSC; i++) {
         int numer;
         cin >> numer;
         if (cin.fail()) {
@@ -19,9 +19,9 @@ int main()
         liczby[i] = numer;
     }
     cout << "Liczby ujemne zamienione na 0: ";
-    for (int i = 0; i < wielkosc; i++) {
+    for (int i = 0; i < WIELKOSC; i++) {
         cout << liczby[i];
-        if (i < wielkosc - 1) {
+        if (i < WIELKOSC - 1) {
             cout << ", ";
         }
     }
