@@ -4,11 +4,11 @@
 
 void LosujTablice(int* tablica, int rozmiar) {
 	for (int i = 0; i < rozmiar; i++) {
-		tablica[i] = rand() % 50 + 1;
+		tablica[i] = rand() % 51;
 	}
 }
 
-bool SprawdzLiczbe(int* tablica, int rozmiar, int* liczba) {
+bool SprawdzLiczbe(int* liczba, int* tablica, int rozmiar) {
 	for (int i = 0; i < rozmiar; i++) {
 		if (tablica[i] == *liczba) {
 			return true;
@@ -19,7 +19,7 @@ bool SprawdzLiczbe(int* tablica, int rozmiar, int* liczba) {
 
 int main()
 {
-	srand(time(nullptr)); 
+	srand(static_cast<unsigned>(time(nullptr)));
 
 	const int rozmiar = 10;
 	int tablica[rozmiar];
@@ -47,14 +47,15 @@ int main()
 
 		liczbaProb++;
 
-		if (SprawdzLiczbe(tablica, rozmiar, &liczba)) {
+		if (SprawdzLiczbe(&liczba, tablica, rozmiar)) {
 			std::cout << "Zgadles!" << std::endl;
 			break;
 		}
 		else {
-			std::cout << "Nie zgadles\n";
-
+			std::cout << "Nie zgadles" << std::endl;
 		}
 	}
 	std::cout << "Zgadles za " << liczbaProb << " razem." << std::endl;
+
+	return 0;
 }
